@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>JSON Data</legend>
+  <h2>This is the JSON Data</h2> -->
+
+<div *ngFor="let item of tutorials">
+  <p>ID: {{ item.id }}</p>
+  <p>Subject: {{ item.subject }}</p>
+  <img [src]="item.logo.url" [alt]="item.subject + ' Logo'" [style.height]="item.logo.height" [style.width]="item.logo.width">
+
+
+  <a [routerLink]="['book',item.id]">    {{item.subject}} Click Here</a>
+
+  <hr>
+</div>
+
+</fieldset>

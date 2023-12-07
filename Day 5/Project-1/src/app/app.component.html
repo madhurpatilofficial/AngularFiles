@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipes</title>
+</head>
+
+<body>
+  <!-- title and username are declared in .ts file -->
+  <h1>Pipe Examples {{title | uppercase}}</h1>
+  <h1>Pipe Examples {{username | lowercase}}</h1>
+
+  <fieldset class="currency">
+    <legend> Currency Pipe</legend>
+
+    <!-- ngNonBindable means it will print as normal string -->
+    <p ngNonBindable>{{ amount| currency:'CAD' }}</p>
+    <p>{{amount | currency:"CAD" }}</p>
+
+    <p ngNonBindable>{{amount| currency:'CAD':'code' }}</p>
+    <p>{{ amount | currency:'CAD':'code'}}</p>
+
+    <p ngNonBindable>{{ 1234.56 | currency:'CAD':'symbol' }}</p>
+    <p>{{ amount | currency:'CAD':'symbol'}}</p>
+
+    <p ngNonBindable>{{ 1234.56 | currency:'CAD':'symbol-narrow' }}</p>
+    <p>{{ amount | currency:'CAD':'symbol-narrow'}}</p>
+
+    <p ngNonBindable>{{ 1234.56 | currency:'Rs.' }}</p>
+    <p>{{ amount | currency:'INR'}}</p>
+  </fieldset>
+
+  <fieldset class="datetime">
+    <legend>Date and Time</legend>
+    <p ngNonBindable>{{ currentDate }}</p>
+    <p> {{ birthdate | date }}</p>
+    <p> {{ birthdate | date : 'fullDate' }}</p>
+
+  </fieldset>
+
+
+  <fieldset class="numbers">
+    <legend>Decimal Pipe</legend>
+
+    <p ngNonBindable>{{ 3.14159265 | number: '3.1-2' }}</p>
+    <p>{{ 3.14159265 | number: '3.1-2' }}</p>
+
+    <p ngNonBindable>{{ 3.14159265 | number: '1.4-4' }}</p>
+    <p>{{ 3.14159265 | number: '1.4-4' }}</p>
+
+  </fieldset>
+
+  <fieldset class="stringSlice">
+
+    <legend>String Formatting</legend>
+    <p>{{str}}[0:4]: '{{str | slice:0:4}}' - output is expected to be 'abcd'</p>
+    <p>{{str}}[4:0]: '{{str | slice:4:0}}' - output is expected to be ''</p>
+    <p>{{str}}[-4]: '{{str | slice:-4}}' - output is expected to be 'ghij'</p>
+    <p>{{str}}[-4:-2]: '{{str | slice:-4:-2}}' - output is expected to be 'gh'</p>
+    <p>{{str}}[-100]: '{{str | slice:-100}}' - output is expected to be 'abcdefghij'</p>
+    <p>{{str}}[100]: '{{str | slice:100}}' - output is expected to be ''</p>
+  </fieldset>
+
+
+
+  <fieldset>
+    <legend>Document</legend>
+    <h1>Json Pipe</h1>
+    <b>{{ jsonval | json }}</b>
+    <h1>Percent Pipe</h1>
+    <b>{{00.54565 | percent}}</b>
+    <h1>Slice Pipe</h1>
+    <b>{{months | slice:2:6}}</b>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Number Formatting</legend>
+    <!--output '2.718'-->
+    <p>e (no formatting): {{e | number}}</p>
+
+    <!--output '002.71828'-->
+    <p>e (3.1-5): {{e | number:'3.1-5'}}</p>
+
+    <!--output '0,002.71828'-->
+    <p>e (4.5-5): {{e | number:'4.5-5'}}</p>
+
+    <!--output '0 002,71828'-->
+    <p>e (french): {{e | number:'4.5-5':'fr'}}</p>
+
+    <!--output '3.14'-->
+    <p>pi (no formatting): {{pi | number}}</p>
+
+    <!--output '003.14'-->
+    <p>pi (3.1-5): {{pi | number:'3.1-5'}}</p>
+
+    <!--output '003.14000'-->
+    <p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
+
+    <!--output '-3' / unlike '-2' by Math.round()-->
+    <p>-2.5 (1.0-0): {{-2.5 | number:'1.0-0'}}</p>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Custom Pipe</legend>
+    <p>{{username | reverseStr}}</p>
+  </fieldset>
+
+
+  <fieldset>
+
+    <legend>Exponential Custom Pipe</legend>
+    <h2>Power Boost Calculator</h2>
+    <div>Normal power: <input [(ngModel)]="power"></div>
+    <div>Boost factor: <input [(ngModel)]="factor"></div>
+    <p>
+      Super Hero Power: {{power | exponentialStrength: factor}}
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Time Format</legend>
+    <h1>Time in Hours - {{ 3600000 | timeFormat: 'hr' }}</h1>
+    <h1>Time in Minutes - {{ 4000000 | timeFormat: 'min' }}</h1>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Power</legend>
+    {{ 10 | power : 2 : 20}}
+  </fieldset>
+
+
+
+</body>
+
+</html>

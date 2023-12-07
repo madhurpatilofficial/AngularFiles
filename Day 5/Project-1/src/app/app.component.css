@@ -1,0 +1,24 @@
+.currency{
+    color: blue;
+    font-weight: bold;
+}
+
+.datetime{
+    color: green;
+    font-weight: bold;
+}
+
+.numbers{
+    color: rgb(41, 43, 61);
+    font-weight: bold;
+}
+
+.stringSlice{
+    color: rgb(82, 1, 1);
+    font-weight: bold;
+}
+
+
+body{
+    background-color: rgb(213, 234, 242);
+}

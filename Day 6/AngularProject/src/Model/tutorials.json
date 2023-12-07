@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "subject": "Angular",
+    "logo": {
+      "url": "https://pluralsight2.imgix.net/paths/images/angular-14a0f6532f.png",
+      "height": "100px",
+      "width": "150px"
+    }
+  },
+  {
+    "id": 2,
+    "subject": "SQL",
+    "logo": {
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8WKHy7VVaQEamKwhoqunSjhPh7J6fQTpJvA&usqp=CAU",
+      "height": "120px",
+      "width": "180px"
+    }
+  },
+  {
+    "id": 3,
+    "subject": "Java",
+    "logo": {
+      "url": "https://cdn.clever-cloud.com/uploads/2023/06/java.svg",
+      "height": "80px",
+      "width": "120px"
+    }
+  },
+  {
+    "id": 4,
+    "subject": "JavaScript",
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png",
+      "height": "90px",
+      "width": "130px"
+    }
+  }
+]
